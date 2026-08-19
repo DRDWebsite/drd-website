@@ -1,570 +1,2620 @@
-HTML
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Direction Towards Responsible Development (DRD)</title>
+    <title>Direction Towards Responsible Development | DRD</title>
 
-<style>
+    <meta name="description"
+          content="DRD provides strategic advisory for responsible business, human rights, ESG governance and sustainable value chains.">
 
-/* --------------------
-   GLOBAL STYLES
---------------------- */
+    <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        /* =========================================================
+           DRD — DIRECTION TOWARDS RESPONSIBLE DEVELOPMENT
+           Premium Consulting Website
+        ========================================================= */
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.7;
-    color:#2f2f2f;
-    background:#f8f6f1;
-}
+        :root {
+            --charcoal: #17191b;
+            --charcoal-soft: #24282b;
+            --ivory: #f5f1e9;
+            --warm-white: #fbfaf7;
+            --blue: #536d7c;
+            --blue-dark: #3e5664;
+            --bronze: #a9875b;
+            --bronze-light: #c5a878;
+            --text: #25282a;
+            --muted: #6c7071;
+            --line: #dcd7ce;
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: Arial, Helvetica, sans-serif;
 
-section{
-    padding:90px 0;
-}
+            --max-width: 1240px;
+            --transition: 0.35s ease;
+        }
 
-h1,h2,h3{
-    margin-bottom:20px;
-}
 
-p{
-    margin-bottom:15px;
-}
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-/* --------------------
-   NAVIGATION
---------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{
-    background:#1f1f1f;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
-}
+        body {
+            font-family: var(--sans);
+            color: var(--text);
+            background: var(--warm-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-.logo{
-    color:#ffffff;
-    font-size:28px;
-    font-weight:700;
-}
+        img {
+            width: 100%;
+            display: block;
+        }
 
-.logo span{
-    color:#6f8064;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
-}
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
 
-nav a{
-    color:#ffffff;
-    text-decoration:none;
-    font-size:15px;
-}
+        .container {
+            width: min(90%, var(--max-width));
+            margin: auto;
+        }
 
-nav a:hover{
-    color:#b58b4c;
-}
 
-/* --------------------
-   HERO SECTION
---------------------- */
+        /* =========================================================
+           GLOBAL TYPOGRAPHY
+        ========================================================= */
 
-.hero{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    background:#e9e5dd;
-}
+        .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--bronze);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
 
-.hero-content{
-    flex:1;
-}
+        h1,
+        h2,
+        h3 {
+            font-family: var(--serif);
+            font-weight: 400;
+            line-height: 1.12;
+        }
 
-.hero h1{
-    font-size:60px;
-    margin-bottom:25px;
-}
+        h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+        }
 
-.hero p{
-    font-size:20px;
-    max-width:700px;
-}
+        h3 {
+            font-size: 1.65rem;
+        }
 
-.hero-buttons{
-    margin-top:35px;
-}
+        .lead {
+            font-size: 1.12rem;
+            color: var(--muted);
+            max-width: 720px;
+        }
 
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    margin-right:15px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:600;
-}
+        .section {
+            padding: 120px 0;
+        }
 
-.primary-btn{
-    background:#b58b4c;
-    color:white;
-}
 
-.secondary-btn{
-    border:2px solid #1f1f1f;
-    color:#1f1f1f;
-}
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
 
-.image-placeholder{
-    margin-top:40px;
-    width:100%;
-    height:350px;
-    border:3px dashed #999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#666;
-}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 26px;
+            border: 1px solid transparent;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: var(--transition);
+            cursor: pointer;
+        }
 
-/* --------------------
-   ABOUT
---------------------- */
+        .btn-primary {
+            background: var(--charcoal);
+            color: white;
+        }
 
-.about{
-    background:white;
-}
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+        }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
+        .btn-outline {
+            border-color: var(--charcoal);
+            color: var(--charcoal);
+            background: transparent;
+        }
 
-.about-image{
-    height:400px;
-    border:3px dashed #999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+        .btn-outline:hover {
+            background: var(--charcoal);
+            color: white;
+        }
 
-/* --------------------
-   SERVICES
---------------------- */
+        .btn-light {
+            background: var(--ivory);
+            color: var(--charcoal);
+        }
 
-.services{
-    background:#f3f1eb;
-}
+        .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
 
-.service-card{
-    background:white;
-    padding:35px 25px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
+        /* =========================================================
+           HEADER
+        ========================================================= */
 
-.service-card h3{
-    color:#6f8064;
-}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(251, 250, 247, 0.96);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            backdrop-filter: blur(12px);
+        }
 
-/* --------------------
-   CONTACT
---------------------- */
+        .nav {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.contact{
-    background:white;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-.contact-wrapper{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+        }
 
-form input,
-form textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:15px;
-    border:1px solid #cccccc;
-}
+        .logo-text strong {
+            display: block;
+            font-size: 0.82rem;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
 
-form button{
-    padding:15px 30px;
-    border:none;
-    background:#1f1f1f;
-    color:white;
-    cursor:pointer;
-}
+        .logo-text span {
+            display: block;
+            font-size: 0.63rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            margin-top: 2px;
+        }
 
-/* --------------------
-   FOOTER
---------------------- */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
 
-footer{
-    background:#1f1f1f;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
+        .nav-links a {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #444;
+            transition: var(--transition);
+        }
 
-/* --------------------
-   RESPONSIVE DESIGN
---------------------- */
+        .nav-links a:hover {
+            color: var(--bronze);
+        }
 
-@media(max-width:900px){
+        .nav-cta {
+            margin-left: 10px;
+        }
 
-    .hero h1{
-        font-size:40px;
-    }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
 
-    .about-grid,
-    .contact-wrapper,
-    .service-grid{
-        grid-template-columns:1fr;
-    }
 
-    nav{
-        flex-direction:column;
-    }
+        /* =========================================================
+           HERO
+        ========================================================= */
 
-    nav ul{
-        margin-top:20px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+        .hero {
+            min-height: 100vh;
+            padding-top: 82px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(23,25,27,0.96) 0%,
+                    rgba(23,25,27,0.91) 48%,
+                    rgba(23,25,27,0.60) 100%
+                ),
+                url("YOUR-HERO-IMAGE-HERE.jpg");
 
-}
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
 
-</style>
+        .hero-content {
+            max-width: 900px;
+            padding: 100px 0;
+        }
+
+        .hero .eyebrow {
+            color: var(--bronze-light);
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 7vw, 7rem);
+            margin-bottom: 28px;
+            letter-spacing: -0.035em;
+        }
+
+        .hero-tagline {
+            font-family: var(--serif);
+            font-size: clamp(1.35rem, 2vw, 2rem);
+            color: #e3dfd5;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            font-size: 1.08rem;
+            color: #d1d1cc;
+            margin-bottom: 38px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+
+        /* =========================================================
+           INTRO / WHY DRD
+        ========================================================= */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .intro-title h2 {
+            margin-bottom: 20px;
+        }
+
+        .intro-copy p {
+            margin-bottom: 22px;
+            color: var(--muted);
+        }
+
+        .emphasis {
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            color: var(--charcoal);
+            border-left: 3px solid var(--bronze);
+            padding-left: 25px;
+            margin: 30px 0;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .dark-section {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .dark-section .eyebrow {
+            color: var(--bronze-light);
+        }
+
+        .dark-section .lead {
+            color: #bfc1bf;
+        }
+
+        .section-heading {
+            max-width: 800px;
+            margin-bottom: 70px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: #45494b;
+            border: 1px solid #45494b;
+        }
+
+        .service-card {
+            background: var(--charcoal);
+            padding: 46px;
+            min-height: 280px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            background: var(--charcoal-soft);
+        }
+
+        .service-number {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            color: var(--bronze-light);
+            margin-bottom: 28px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: #b7bab8;
+            font-size: 0.94rem;
+        }
+
+        .service-list {
+            margin-top: 20px;
+            padding-left: 18px;
+            color: #b7bab8;
+            font-size: 0.87rem;
+        }
+
+
+        /* =========================================================
+           DIFFERENCE
+        ========================================================= */
+
+        .difference {
+            background: var(--ivory);
+        }
+
+        .difference-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            margin-top: 60px;
+        }
+
+        .difference-card {
+            background: var(--ivory);
+            padding: 35px 25px;
+            min-height: 250px;
+        }
+
+        .difference-card span {
+            font-family: var(--serif);
+            color: var(--bronze);
+            font-size: 1.3rem;
+        }
+
+        .difference-card h3 {
+            font-size: 1.3rem;
+            margin: 20px 0 12px;
+        }
+
+        .difference-card p {
+            font-size: 0.86rem;
+            color: var(--muted);
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience {
+            background: var(--warm-white);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-top: 65px;
+        }
+
+        .stat {
+            padding: 45px 30px;
+            border-right: 1px solid var(--line);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            color: var(--charcoal);
+        }
+
+        .stat-label {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+
+        /* =========================================================
+           WHO WE WORK WITH
+        ========================================================= */
+
+        .clients {
+            background: var(--blue-dark);
+            color: white;
+        }
+
+        .clients .eyebrow {
+            color: var(--bronze-light);
+        }
+
+        .clients .lead {
+            color: #d0d5d5;
+        }
+
+        .client-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 55px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .client-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-family: var(--serif);
+            font-size: 1.25rem;
+        }
+
+
+        /* =========================================================
+           PHILOSOPHY
+        ========================================================= */
+
+        .philosophy {
+            text-align: center;
+            background: var(--warm-white);
+        }
+
+        .philosophy h2 {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .philosophy-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .philosophy-list span {
+            padding: 10px 22px;
+            border: 1px solid var(--line);
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            background: white;
+        }
+
+
+        /* =========================================================
+           APPROACH
+        ========================================================= */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+        }
+
+        .approach-steps {
+            border-top: 1px solid var(--line);
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 25px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .step-number {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            color: var(--bronze);
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           FRAMEWORK
+        ========================================================= */
+
+        .framework {
+            background: var(--ivory);
+        }
+
+        .framework-box {
+            margin-top: 55px;
+            border: 1px solid var(--line);
+            padding: 45px;
+            background: white;
+        }
+
+        .framework-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px 50px;
+            margin-top: 30px;
+        }
+
+        .framework-list li {
+            list-style: none;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .framework-list li::before {
+            content: "— ";
+            color: var(--bronze);
+        }
+
+
+        /* =========================================================
+           FOUNDER
+        ========================================================= */
+
+        .founder {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        /* IMAGE PLACEHOLDER */
+        .founder-image {
+            min-height: 600px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #3d4549,
+                    #17191b
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-image::after {
+            content: "FOUNDER IMAGE";
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.18em;
+            font-size: 0.7rem;
+        }
+
+        .founder h2 {
+            margin-bottom: 15px;
+        }
+
+        .founder-role {
+            font-family: var(--serif);
+            color: var(--bronze-light);
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .founder-copy p {
+            color: #c2c5c4;
+            margin-bottom: 20px;
+        }
+
+        .founder-principles {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .founder-principles div {
+            padding: 17px;
+            border: 1px solid #3b3f41;
+            font-family: var(--serif);
+        }
+
+
+        /* =========================================================
+           INSIGHTS
+        ========================================================= */
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 55px;
+        }
+
+        .insight-card {
+            border-top: 2px solid var(--charcoal);
+            padding-top: 28px;
+        }
+
+        .insight-category {
+            color: var(--bronze);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 700;
+        }
+
+        .insight-card h3 {
+            margin: 18px 0;
+        }
+
+        .insight-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 22px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .final-cta {
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(62,86,100,0.94),
+                    rgba(23,25,27,0.97)
+                );
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            max-width: 850px;
+            margin: auto auto 25px;
+        }
+
+        .final-cta p {
+            max-width: 700px;
+            margin: auto auto 35px;
+            color: #d2d5d5;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: var(--bronze);
+            text-transform: uppercase;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .field input,
+        .field textarea,
+        .field select {
+            width: 100%;
+            border: 1px solid var(--line);
+            background: white;
+            padding: 14px;
+            outline: none;
+            font-size: 0.92rem;
+        }
+
+        .field input:focus,
+        .field textarea:focus,
+        .field select:focus {
+            border-color: var(--blue);
+        }
+
+        .field textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 65px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid #383c3e;
+        }
+
+        footer .logo-text strong {
+            color: white;
+        }
+
+        footer .logo-text span {
+            color: #969b9b;
+        }
+
+        .footer-description {
+            color: #aeb1b0;
+            max-width: 420px;
+            margin-top: 20px;
+        }
+
+        .footer-title {
+            color: var(--bronze-light);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #c2c4c3;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 25px;
+            color: #777c7d;
+            font-size: 0.75rem;
+        }
+
+
+        /* =========================================================
+           SCROLL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .nav-links {
+                gap: 17px;
+            }
+
+            .difference-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .intro-grid,
+            .approach-grid,
+            .founder-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .founder-image {
+                min-height: 500px;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .nav {
+                height: 70px;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--warm-white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 25px 5%;
+                gap: 20px;
+                border-bottom: 1px solid var(--line);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content {
+                padding: 70px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--line);
+            }
+
+            .client-list {
+                grid-template-columns: 1fr;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .container {
+                width: 88%;
+            }
+
+            h2 {
+                font-size: 2.7rem;
+            }
+
+            .hero h1 {
+                font-size: 3.3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .difference-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .framework-list {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-principles {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-image {
+                min-height: 400px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- ===================
+
+<!-- =========================================================
      HEADER
-==================== -->
+========================================================= -->
 
 <header>
 
-<div class="container">
+    <div class="container nav">
 
-<nav>
+        <a href="#home" class="logo">
 
-<div class="logo">
-DRD <span>Consultants</span>
-</div>
+            <div class="logo-mark">
+                DRD
+            </div>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About Us</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+            <div class="logo-text">
+                <strong>Direction Towards</strong>
+                <span>Responsible Development</span>
+            </div>
 
-</nav>
+        </a>
 
-</div>
+
+        <button class="mobile-toggle" aria-label="Open navigation">
+            ☰
+        </button>
+
+
+        <ul class="nav-links">
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About DRD</a></li>
+            <li><a href="#services">What We Do</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li>
+                <a href="#contact" class="btn btn-primary nav-cta">
+                    Start a Conversation
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
 
 </header>
 
-<!-- ===================
-     HOME
-==================== -->
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero" id="home">
 
-<div class="container">
+    <div class="container">
 
-<div class="hero-content">
+        <div class="hero-content reveal">
 
-<h1>
-Responsible Business.
-Responsible Growth.
-Responsible Impact.
-</h1>
+            <div class="eyebrow">
+                Direction Towards Responsible Development
+            </div>
 
-<p>
-Direction Towards Responsible Development (DRD) helps organizations
-translate ESG commitments into practical systems, stronger governance,
-responsible supply chains, and measurable impact across people,
-operations, and value chains.
-</p>
+            <h1>
+                Responsible Business.
+                <br>
+                Responsible Growth.
+                <br>
+                Responsible Impact.
+            </h1>
 
-<div class="hero-buttons">
+            <div class="hero-tagline">
+                Strategic Advisory for Responsible Business,
+                Human Rights & Sustainable Value Chains.
+            </div>
 
-<a href="#" class="btn primary-btn">
-Start a Conversation
-</a>
+            <p class="hero-description">
+                We help organisations translate responsible-business
+                commitments into practical systems, stronger governance
+                and measurable impact across people, operations and
+                value chains.
+            </p>
 
-<a href="#" class="btn secondary-btn">
-Explore Our Expertise
-</a>
+            <div class="hero-buttons">
 
-</div>
+                <a href="#contact" class="btn btn-light">
+                    Start a Conversation
+                </a>
 
-<div class="image-placeholder">
+                <a href="#services" class="btn btn-outline"
+                   style="border-color:white;color:white;">
+                    Explore Our Expertise
+                </a>
 
-[ INSERT HERO IMAGE HERE ]
+            </div>
 
-</div>
+        </div>
 
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================
-     ABOUT
-==================== -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<h2>About DRD</h2>
-
-<div class="about-grid">
-
-<div>
-
-<p>
-Direction Towards Responsible Development (DRD) is a strategic advisory
-practice specializing in ESG, sustainability, labor standards, human
-rights, responsible sourcing, and corporate governance.
-</p>
-
-<p>
-We help businesses bridge the gap between policy and practice by
-transforming responsible-business commitments into operational
-frameworks that create measurable and sustainable impact.
-</p>
-
-<p>
-Our expertise combines governance, field implementation, stakeholder
-engagement, and international standards to support organizations in
-building resilient and responsible business systems.
-</p>
-
-</div>
-
-<div class="about-image">
-
-[ INSERT COMPANY IMAGE HERE ]
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- ===================
+
+
+<!-- =========================================================
+     WHY DRD
+========================================================= -->
+
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="intro-title reveal">
+
+                <div class="eyebrow">
+                    Why DRD
+                </div>
+
+                <h2>
+                    Responsibility must move beyond commitments.
+                </h2>
+
+            </div>
+
+
+            <div class="intro-copy reveal">
+
+                <p>
+                    Organisations today operate in an increasingly
+                    complex environment of human-rights expectations,
+                    sustainability regulations, stakeholder scrutiny
+                    and supply-chain risks.
+                </p>
+
+                <p>
+                    Policies alone are not enough.
+                </p>
+
+                <div class="emphasis">
+                    DRD bridges the gap between policy and practice,
+                    commitment and accountability, and risk
+                    identification and meaningful action.
+                </div>
+
+                <p>
+                    Our work brings together strategic thinking,
+                    field experience and responsible-business
+                    frameworks to help organisations build systems
+                    that work in the real world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      SERVICES
-==================== -->
+========================================================= -->
 
-<section class="services" id="services">
+<section class="section dark-section" id="services">
 
-<div class="container">
+    <div class="container">
 
-<h2>Our Services</h2>
+        <div class="section-heading reveal">
 
-<div class="service-grid">
+            <div class="eyebrow">
+                What We Do
+            </div>
 
-<div class="service-card">
+            <h2>
+                Turning responsible-business
+                principles into action.
+            </h2>
 
-<h3>ESG & Sustainability</h3>
+            <p class="lead" style="margin-top:25px;">
+                Strategic advisory across ESG, human rights,
+                responsible supply chains, governance and
+                operational implementation.
+            </p>
 
-<p>
-Develop ESG strategies, governance systems, sustainability frameworks,
-and responsible business practices.
-</p>
+        </div>
 
-</div>
 
-<div class="service-card">
+        <div class="services-grid">
 
-<h3>Human Rights & Labor Standards</h3>
 
-<p>
-Conduct human rights due diligence, labor assessments, and worker
-engagement programs.
-</p>
+            <article class="service-card reveal">
 
-</div>
+                <div class="service-number">01</div>
 
-<div class="service-card">
+                <h3>ESG & Sustainability Governance</h3>
 
-<h3>Responsible Supply Chains</h3>
+                <p>
+                    Strengthening governance systems that enable
+                    organisations to integrate environmental, social
+                    and ethical considerations into business
+                    decision-making.
+                </p>
 
-<p>
-Strengthen supplier accountability, ethical sourcing, social compliance,
-and responsible procurement systems.
-</p>
+            </article>
 
-</div>
 
-<div class="service-card">
+            <article class="service-card reveal">
 
-<h3>Corporate Governance</h3>
+                <div class="service-number">02</div>
 
-<p>
-Support boards and leadership teams in strengthening governance,
-accountability, and risk management.
-</p>
+                <h3>Human Rights Due Diligence</h3>
 
-</div>
+                <p>
+                    Supporting organisations to identify, assess,
+                    prevent, mitigate and address human-rights risks
+                    across operations and value chains.
+                </p>
 
-<div class="service-card">
+            </article>
 
-<h3>Grievance & Remediation</h3>
 
-<p>
-Design and operationalize effective grievance mechanisms and remediation
-frameworks.
-</p>
+            <article class="service-card reveal">
 
-</div>
+                <div class="service-number">03</div>
 
-<div class="service-card">
+                <h3>Responsible Supply Chains</h3>
 
-<h3>Ethical Recruitment</h3>
+                <p>
+                    Helping organisations strengthen supplier
+                    accountability, social sustainability and
+                    responsible sourcing practices.
+                </p>
 
-<p>
-Develop policies and systems that protect workers throughout the
-recruitment and employment process.
-</p>
+            </article>
 
-</div>
 
-<div class="service-card">
+            <article class="service-card reveal">
 
-<h3>Stakeholder Engagement</h3>
+                <div class="service-number">04</div>
 
-<p>
-Build meaningful engagement strategies for workers, communities,
-suppliers, and business partners.
-</p>
+                <h3>Grievance & Remediation</h3>
 
-</div>
+                <p>
+                    Designing and operationalising grievance
+                    mechanisms and remediation systems that are
+                    accessible, credible and responsive.
+                </p>
 
-<div class="service-card">
+            </article>
 
-<h3>Strategic Advisory</h3>
 
-<p>
-Provide practical and evidence-based guidance to organizations
-navigating emerging ESG and sustainability expectations.
-</p>
+            <article class="service-card reveal">
 
-</div>
+                <div class="service-number">05</div>
 
-</div>
+                <h3>Responsible Procurement</h3>
 
-</div>
+                <p>
+                    Embedding responsible-business and sustainability
+                    considerations into procurement and
+                    supplier-management processes.
+                </p>
+
+            </article>
+
+
+            <article class="service-card reveal">
+
+                <div class="service-number">06</div>
+
+                <h3>Human Rights & Social Sustainability</h3>
+
+                <p>
+                    Helping organisations understand and manage
+                    social risks affecting workers, communities and
+                    other stakeholders.
+                </p>
+
+            </article>
+
+
+            <article class="service-card reveal"
+                     style="grid-column:1/-1;">
+
+                <div class="service-number">07</div>
+
+                <h3>Board & Leadership Advisory</h3>
+
+                <p>
+                    Providing strategic perspectives on ESG,
+                    human rights, responsible business governance
+                    and emerging sustainability expectations.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- ===================
+
+
+<!-- =========================================================
+     OUR DIFFERENCE
+========================================================= -->
+
+<section class="section difference">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Our Difference
+            </div>
+
+            <h2>
+                From frameworks to field realities.
+            </h2>
+
+            <p class="lead" style="margin-top:25px;">
+                Responsible business is not created by frameworks
+                alone. It is created when policies, systems, people
+                and decisions work together.
+            </p>
+
+        </div>
+
+
+        <div class="difference-grid">
+
+            <div class="difference-card reveal">
+                <span>01</span>
+                <h3>Strategic Perspective</h3>
+                <p>
+                    Understanding the business context, emerging
+                    expectations and long-term implications.
+                </p>
+            </div>
+
+
+            <div class="difference-card reveal">
+                <span>02</span>
+                <h3>Deep Field Experience</h3>
+                <p>
+                    Experience of working close to operations,
+                    workers, suppliers and communities.
+                </p>
+            </div>
+
+
+            <div class="difference-card reveal">
+                <span>03</span>
+                <h3>Governance Lens</h3>
+                <p>
+                    Connecting sustainability and human rights with
+                    accountability, risk and decision-making.
+                </p>
+            </div>
+
+
+            <div class="difference-card reveal">
+                <span>04</span>
+                <h3>Practical Implementation</h3>
+                <p>
+                    Moving beyond assessment and reporting towards
+                    systems that can actually operate.
+                </p>
+            </div>
+
+
+            <div class="difference-card reveal">
+                <span>05</span>
+                <h3>Global Standards. Local Reality.</h3>
+                <p>
+                    Connecting international expectations with the
+                    realities of implementation across complex
+                    value chains.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section class="section experience">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Experience & Credibility
+            </div>
+
+            <h2>
+                Experience built where responsibility
+                meets reality.
+            </h2>
+
+            <p class="lead" style="margin-top:25px;">
+                Over more than two decades, our work has involved
+                responsible business, human rights, social
+                sustainability and supply-chain governance across
+                diverse sectors and geographies.
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat reveal">
+                <div class="stat-number">22+</div>
+                <div class="stat-label">
+                    Years Professional Experience
+                </div>
+            </div>
+
+            <div class="stat reveal">
+                <div class="stat-number">2,000+</div>
+                <div class="stat-label">
+                    Field-Level Assessments
+                </div>
+            </div>
+
+            <div class="stat reveal">
+                <div class="stat-number">Asia</div>
+                <div class="stat-label">
+                    Regional Experience
+                </div>
+            </div>
+
+            <div class="stat reveal">
+                <div class="stat-number">EMEA</div>
+                <div class="stat-label">
+                    Cross-Regional Experience
+                </div>
+            </div>
+
+        </div>
+
+        <p style="margin-top:35px;max-width:800px;color:var(--muted);">
+            Human Rights | ESG | Responsible Supply Chains | Governance
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHO WE WORK WITH
+========================================================= -->
+
+<section class="section clients">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Who We Work With
+            </div>
+
+            <h2>
+                Supporting organisations
+                navigating responsible growth.
+            </h2>
+
+            <p class="lead" style="margin-top:25px;">
+                DRD works with organisations that recognise that
+                responsible business is increasingly central to
+                resilience, trust and long-term value creation.
+            </p>
+
+        </div>
+
+
+        <div class="client-list">
+
+            <div class="client-item">Corporates</div>
+            <div class="client-item">Global & Regional Supply Chains</div>
+
+            <div class="client-item">Manufacturers & Exporters</div>
+            <div class="client-item">Responsible Sourcing Teams</div>
+
+            <div class="client-item">ESG & Sustainability Functions</div>
+            <div class="client-item">HR & Ethics Teams</div>
+
+            <div class="client-item">Boards & Senior Leadership</div>
+            <div class="client-item">Industry Initiatives</div>
+
+            <div class="client-item">NGOs & Development Organisations</div>
+            <div class="client-item">Certification & Assurance Ecosystems</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PHILOSOPHY
+========================================================= -->
+
+<section class="section philosophy">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Our Philosophy
+        </div>
+
+        <h2>
+            Responsible development begins
+            with responsible decisions.
+        </h2>
+
+        <p class="lead" style="margin:30px auto 0;">
+            We believe responsible development is not a separate
+            business agenda. It is embedded in how organisations
+            decide, source, employ, produce, govern, listen,
+            respond and grow.
+        </p>
+
+
+        <div class="philosophy-list">
+
+            <span>Decide</span>
+            <span>Source</span>
+            <span>Employ</span>
+            <span>Produce</span>
+            <span>Govern</span>
+            <span>Listen</span>
+            <span>Respond</span>
+            <span>Grow</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     APPROACH
+========================================================= -->
+
+<section class="section" id="approach">
+
+    <div class="container">
+
+        <div class="approach-grid">
+
+            <div class="reveal">
+
+                <div class="eyebrow">
+                    Our Approach
+                </div>
+
+                <h2>
+                    From understanding
+                    to action.
+                </h2>
+
+                <p class="lead" style="margin-top:25px;">
+                    Our approach connects global standards with
+                    practical implementation.
+                </p>
+
+            </div>
+
+
+            <div class="approach-steps">
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">01</div>
+
+                    <div>
+                        <h3>Understand</h3>
+                        <p>
+                            Understand the organisation, its operating
+                            context, stakeholders and value-chain
+                            realities.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">02</div>
+
+                    <div>
+                        <h3>Identify</h3>
+                        <p>
+                            Identify material risks, gaps,
+                            vulnerabilities and opportunities.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">03</div>
+
+                    <div>
+                        <h3>Prioritise</h3>
+                        <p>
+                            Focus resources on issues that matter
+                            most to people, business resilience
+                            and responsible growth.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">04</div>
+
+                    <div>
+                        <h3>Design</h3>
+                        <p>
+                            Develop practical systems, governance
+                            structures, processes and interventions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">05</div>
+
+                    <div>
+                        <h3>Implement</h3>
+                        <p>
+                            Translate recommendations into
+                            operational action.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">06</div>
+
+                    <div>
+                        <h3>Measure</h3>
+                        <p>
+                            Track effectiveness, outcomes and areas
+                            requiring improvement.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step reveal">
+
+                    <div class="step-number">07</div>
+
+                    <div>
+                        <h3>Strengthen</h3>
+                        <p>
+                            Build organisational capability so
+                            responsible practices become embedded.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FRAMEWORK
+========================================================= -->
+
+<section class="section framework">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Our Framework
+            </div>
+
+            <h2>
+                Standards provide the direction.
+                Experience makes implementation possible.
+            </h2>
+
+        </div>
+
+
+        <div class="framework-box reveal">
+
+            <p>
+                Our work draws on internationally recognised
+                responsible-business principles and frameworks.
+            </p>
+
+            <ul class="framework-list">
+
+                <li>
+                    United Nations Guiding Principles on Business
+                    and Human Rights
+                </li>
+
+                <li>
+                    International Labour Organization standards
+                </li>
+
+                <li>
+                    OECD Responsible Business Guidance
+                </li>
+
+                <li>
+                    IFC Performance Standards
+                </li>
+
+                <li>
+                    Responsible Procurement Principles
+                </li>
+
+                <li>
+                    ESG Governance Frameworks
+                </li>
+
+                <li>
+                    Human Rights Due Diligence Approaches
+                </li>
+
+                <li>
+                    Modern Slavery & Responsible Recruitment
+                </li>
+
+            </ul>
+
+            <div class="emphasis">
+                We do not treat frameworks as checklists.
+                We use them as tools for better decision-making.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOUNDER
+========================================================= -->
+
+<section class="section founder" id="founder">
+
+    <div class="container">
+
+        <div class="founder-grid">
+
+            <!-- IMAGE PLACEHOLDER -->
+
+            <div class="founder-image reveal">
+                <!--
+                    REPLACE THIS ENTIRE DIV WITH:
+
+                    <img src="YOUR-FOUNDER-PHOTO.jpg"
+                         alt="Deepti Mittal - Founder and Principal Advisor">
+                -->
+            </div>
+
+
+            <div class="founder-copy reveal">
+
+                <div class="eyebrow">
+                    About the Founder
+                </div>
+
+                <h2>
+                    Deepti Mittal
+                </h2>
+
+                <div class="founder-role">
+                    Independent Strategic Advisor |
+                    ESG, Human Rights & Responsible Business Governance
+                </div>
+
+                <p>
+                    Founder & Principal Advisor, Direction Towards
+                    Responsible Development.
+                </p>
+
+                <p>
+                    For more than two decades, Deepti Mittal has
+                    worked at the intersection of business, human
+                    rights, sustainability and responsible supply
+                    chains.
+                </p>
+
+                <p>
+                    Her experience spans human-rights due diligence,
+                    social sustainability, responsible sourcing,
+                    grievance and remediation systems, ethical
+                    recruitment, supplier accountability and ESG
+                    governance across Asia and EMEA.
+                </p>
+
+                <p>
+                    Her work has involved engaging with organisations,
+                    supply chains, workers and other stakeholders to
+                    understand how responsible-business principles
+                    translate into operational reality.
+                </p>
+
+
+                <div class="founder-principles">
+
+                    <div>
+                        Governance with implementation.
+                    </div>
+
+                    <div>
+                        Policy with practice.
+                    </div>
+
+                    <div>
+                        Risk with action.
+                    </div>
+
+                    <div>
+                        Global standards with local realities.
+                    </div>
+
+                </div>
+
+                <a href="#contact"
+                   class="btn btn-light"
+                   style="margin-top:35px;">
+                    Connect with Deepti
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INSIGHTS
+========================================================= -->
+
+<section class="section" id="insights">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                Insights
+            </div>
+
+            <h2>
+                Perspectives on
+                responsible business.
+            </h2>
+
+            <p class="lead" style="margin-top:25px;">
+                Ideas, observations and practical perspectives on
+                the issues shaping responsible business.
+            </p>
+
+        </div>
+
+
+        <div class="insights-grid">
+
+
+            <article class="insight-card reveal">
+
+                <div class="insight-category">
+                    Human Rights
+                </div>
+
+                <h3>
+                    Responsibility Beyond the Report
+                </h3>
+
+                <p>
+                    The future of responsible business will not be
+                    determined only by what organisations report.
+                    It will be determined by what they do.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read Insight →
+                </a>
+
+            </article>
+
+
+            <article class="insight-card reveal">
+
+                <div class="insight-category">
+                    Responsible Supply Chains
+                </div>
+
+                <h3>
+                    When Supply-Chain Risk Becomes Business Risk
+                </h3>
+
+                <p>
+                    Understanding why supplier accountability and
+                    human-rights risks increasingly belong in
+                    strategic conversations.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read Insight →
+                </a>
+
+            </article>
+
+
+            <article class="insight-card reveal">
+
+                <div class="insight-category">
+                    ESG Governance
+                </div>
+
+                <h3>
+                    ESG Beyond Compliance
+                </h3>
+
+                <p>
+                    Why meaningful ESG governance requires better
+                    questions, clearer accountability and stronger
+                    decision-making.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read Insight →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="section final-cta">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            Start a Conversation
+        </div>
+
+        <h2>
+            Ready to move from commitment to action?
+        </h2>
+
+        <p>
+            Whether you are strengthening your ESG governance,
+            reviewing human-rights risks, transforming your
+            supply-chain approach or building stronger grievance
+            and remediation systems, DRD can help you take the
+            next step.
+        </p>
+
+        <a href="#contact" class="btn btn-light">
+            Start a Conversation
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      CONTACT
-==================== -->
+========================================================= -->
 
-<section class="contact" id="contact">
+<section class="section" id="contact">
 
-<div class="container">
+    <div class="container">
 
-<h2>Start a Conversation</h2>
+        <div class="contact-grid">
 
-<div class="contact-wrapper">
 
-<div>
+            <div class="reveal">
 
-<p>
-Whether you're strengthening ESG governance, improving labor standards,
-reviewing human rights risks, or transforming your supply-chain
-strategy, DRD is ready to support your journey.
-</p>
+                <div class="eyebrow">
+                    Contact
+                </div>
 
-<div class="image-placeholder">
+                <h2>
+                    Start a conversation.
+                </h2>
 
-[ INSERT FOUNDER PHOTO OR OFFICE IMAGE HERE ]
+                <p class="lead" style="margin-top:25px;">
+                    Responsible-business challenges are rarely solved
+                    by a single policy or intervention.
+                </p>
 
-</div>
 
-</div>
+                <div class="contact-details">
 
-<form>
+                    <div class="contact-item">
 
-<input type="text" placeholder="Your Name">
+                        <span>
+                            Company
+                        </span>
 
-<input type="text" placeholder="Organization">
+                        Direction Towards Responsible Development
 
-<input type="email" placeholder="Email Address">
+                    </div>
 
-<textarea rows="6" placeholder="How can we help?"></textarea>
 
-<button type="submit">
-Send Inquiry
-</button>
+                    <div class="contact-item">
 
-</form>
+                        <span>
+                            Founder & Principal Advisor
+                        </span>
 
-</div>
+                        Deepti Mittal
 
-</div>
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <a href="mailto:deepti@drdconsultancy.com">
+                            deepti@drdconsultancy.com
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            Website
+                        </span>
+
+                        DRDconsultancy.com
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            LinkedIn
+                        </span>
+
+                        <a href="#"
+                           target="_blank"
+                           rel="noopener">
+                            Connect with DRD on LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form reveal"
+                  action="#"
+                  method="POST">
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="organisation">
+                            Organisation
+                        </label>
+
+                        <input
+                            type="text"
+                            id="organisation"
+                            name="organisation"
+                            placeholder="Organisation">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+91">
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="service">
+                        What would you like to discuss?
+                    </label>
+
+                    <select id="service" name="service">
+
+                        <option>
+                            Select an area
+                        </option>
+
+                        <option>
+                            Strategic Advisory
+                        </option>
+
+                        <option>
+                            ESG & Governance
+                        </option>
+
+                        <option>
+                            Human Rights Due Diligence
+                        </option>
+
+                        <option>
+                            Responsible Supply Chains
+                        </option>
+
+                        <option>
+                            Grievance & Remediation
+                        </option>
+
+                        <option>
+                            Responsible Procurement
+                        </option>
+
+                        <option>
+                            Board & Leadership Advisory
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="message">
+                        Your message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us briefly about your requirement..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Send an Enquiry
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- ===================
+
+
+<!-- =========================================================
      FOOTER
-==================== -->
+========================================================= -->
 
 <footer>
 
-<p>
-Direction Towards Responsible Development (DRD)
-</p>
+    <div class="container">
 
-<p>
-Responsible Business | Sustainability | Labor Standards |
-Corporate Governance
-</p>
+        <div class="footer-grid">
 
-<p>
-© 2026 DRD Consultants. All Rights Reserved.
-</p>
+
+            <div>
+
+                <div class="logo">
+
+                    <div class="logo-mark"
+                         style="border-color:white;">
+                        DRD
+                    </div>
+
+                    <div class="logo-text">
+
+                        <strong>
+                            Direction Towards
+                        </strong>
+
+                        <span>
+                            Responsible Development
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-description">
+
+                    Strategic Advisory for Responsible Business,
+                    Human Rights & Sustainable Value Chains.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Navigation
+                </div>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#about">
+                            About DRD
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            What We Do
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#approach">
+                            Our Approach
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#insights">
+                            Insights
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#founder">
+                            Founder
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Expertise
+                </div>
+
+                <ul class="footer-links">
+
+                    <li>
+                        ESG Governance
+                    </li>
+
+                    <li>
+                        Human Rights
+                    </li>
+
+                    <li>
+                        Responsible Supply Chains
+                    </li>
+
+                    <li>
+                        Grievance & Remediation
+                    </li>
+
+                    <li>
+                        Responsible Procurement
+                    </li>
+
+                    <li>
+                        Board Advisory
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Direction Towards Responsible Development.
+            All rights reserved.
+
+        </div>
+
+    </div>
 
 </footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* ---------------------------------------------
+       MOBILE NAVIGATION
+    --------------------------------------------- */
+
+    const toggle = document.querySelector(".mobile-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* Close mobile menu after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* ---------------------------------------------
+       SCROLL REVEAL
+    --------------------------------------------- */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+    /* ---------------------------------------------
+       CONTACT FORM DEMO
+       Replace this with Formspree,
+       Netlify Forms, your CRM or backend.
+    --------------------------------------------- */
+
+    const form =
+        document.querySelector(".contact-form");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for reaching out to DRD. " +
+            "Your enquiry form is ready to be connected " +
+            "to your email or CRM."
+        );
+
+        form.reset();
+
+    });
+
+</script>
+
 
 </body>
 </html>
