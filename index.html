@@ -2513,20 +2513,23 @@ looking to address.
 
 <div class="contact-box">
 
-<h3>
-Email
-</h3>
+<form action="https://formspree.io/f/your-form-id" method="POST">
+    
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
 
-<p>
-For advisory enquiries and
-strategic conversations:
-</p>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
 
-<a href="mailto:deepti@drdconsultancy.com">
-deepti@drdconsultancy.com
-</a>
+    <label for="organisation">Organisation</label>
+    <input type="text" id="organisation" name="organisation" required>
 
-</div>
+    <label for="message">Message, Priorities & Challenges</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Send Enquiry</button>
+
+  </form>
 
 </div>
 
