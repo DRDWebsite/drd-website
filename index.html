@@ -196,17 +196,72 @@ header{
    ========================================================= */
 
 .eyebrow{
-    margin-bottom:18px;
+    display:inline-block;
+    position:relative;
+    margin-bottom:24px;
+    padding-bottom:9px;
 
     color:var(--gold);
 
-    font-size:11px;
+    font-size:15px;
     font-weight:700;
+    line-height:1.25;
 
-    text-transform:uppercase;
-    letter-spacing:3px;
+    text-transform:capitalize;
+    letter-spacing:1.6px;
 }
 
+.eyebrow::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:34px;
+    height:2px;
+    background:var(--gold);
+    transform-origin:left center;
+    animation:goldUnderline 2.8s ease-in-out infinite;
+}
+
+@keyframes goldUnderline{
+    0%,100%{
+        width:0;
+        opacity:0;
+    }
+    15%{
+        opacity:.8;
+    }
+    50%{
+        width:78px;
+        opacity:1;
+    }
+    85%{
+        opacity:.8;
+    }
+}
+
+
+
+/* =========================================================
+   TITLE CASE — FIRST LETTER CAPS
+   ========================================================= */
+
+.nav-links button,
+.btn,
+.hero h1,
+.page-hero h1,
+.section-heading h2,
+.content h2,
+.card h3,
+.service h3,
+.approach-card strong,
+.insight-content h3,
+.contact-details h2,
+.contact-box h3,
+.cta h2,
+footer h4{
+    text-transform:capitalize;
+}
 
 /* =========================================================
    BUTTONS
@@ -374,6 +429,19 @@ section{
     margin:21px 0;
 
     background:var(--gold);
+    transform-origin:left center;
+    animation:goldLinePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes goldLinePulse{
+    0%,100%{
+        width:55px;
+        opacity:.7;
+    }
+    50%{
+        width:95px;
+        opacity:1;
+    }
 }
 
 
@@ -447,14 +515,31 @@ section{
 }
 
 .card-number{
-    margin-bottom:18px;
+    display:inline-block;
+    position:relative;
+    margin-bottom:22px;
+    padding-bottom:9px;
 
     color:var(--gold);
 
-    font-size:12px;
+    font-size:15px;
     font-weight:700;
+    line-height:1.2;
 
-    letter-spacing:2px;
+    text-transform:capitalize;
+    letter-spacing:1.2px;
+}
+
+.card-number::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:28px;
+    height:2px;
+    background:var(--gold);
+    transform-origin:left center;
+    animation:goldUnderline 2.8s ease-in-out infinite;
 }
 
 .card h3{
@@ -495,12 +580,30 @@ section{
 }
 
 .service span{
+    display:inline-block;
+    position:relative;
+    padding-bottom:8px;
+
     color:var(--gold);
 
-    font-size:12px;
+    font-size:15px;
     font-weight:700;
+    line-height:1.2;
 
-    letter-spacing:2px;
+    text-transform:capitalize;
+    letter-spacing:1.2px;
+}
+
+.service span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:28px;
+    height:2px;
+    background:var(--gold);
+    transform-origin:left center;
+    animation:goldUnderline 2.8s ease-in-out infinite;
 }
 
 .service h3{
@@ -633,14 +736,30 @@ section{
 }
 
 .insight-content span{
+    display:inline-block;
+    position:relative;
+    padding-bottom:8px;
+
     color:var(--gold);
 
-    font-size:11px;
+    font-size:15px;
     font-weight:700;
+    line-height:1.2;
 
-    text-transform:uppercase;
+    text-transform:capitalize;
+    letter-spacing:1.2px;
+}
 
-    letter-spacing:2px;
+.insight-content span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:28px;
+    height:2px;
+    background:var(--gold);
+    transform-origin:left center;
+    animation:goldUnderline 2.8s ease-in-out infinite;
 }
 
 .insight-content h3{
@@ -961,6 +1080,17 @@ footer button:hover{
 
 }
 
+
+@media (prefers-reduced-motion:reduce){
+    .eyebrow::after,
+    .card-number::after,
+    .service span::after,
+    .insight-content span::after,
+    .gold-line{
+        animation:none;
+    }
+}
+
 </style>
 
 </head>
@@ -1081,16 +1211,7 @@ Start a Conversation
 <div class="hero-content">
 
 
-<div class="eyebrow"{
-    margin-bottom: 18px;
-    color: var(--gold);
-    font-size: 24px; /* Increased from 18px */
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}>
-Direction towards Responsible Development
-</div>
+<div class="eyebrow">Direction towards Responsible Development</div>
 
 
 <h1>
